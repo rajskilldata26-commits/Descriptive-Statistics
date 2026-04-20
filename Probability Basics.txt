@@ -1,0 +1,160 @@
+Assignment(Probability Basics)
+Question 1: A die is rolled. What is the probability of getting:
+(a) An even number
+(b) A number greater than 4
+
+Sol:-A fair die has 6 equally likely outcomes: {1, 2, 3, 4, 5, 6}.
+
+(a) Probability of getting an even number
+Even numbers are: {2, 4, 6} → 3 favorable outcomes
+Total outcomes = 6
+Probability = 3/6 = 1/2
+
+b) Probability of getting a number greater than 4
+Numbers greater than 4 are: {5, 6} → 2 favorable outcomes
+Total outcomes = 6
+Probability = 2/6 = 1/3
+
+Question 2: In a class of 50 students:
+(A)20 like Mathematics (M)
+(B)15 like Science (S)
+(C)5 like both subjects
+What is the probability that a student chosen at random likes Mathematics or Science?
+
+Sol:-To find the probability that a student likes Mathematics or Science (M ∪ S), we use the inclusion–exclusion principle:
+P(M∪S)=n(M)+n(S)−n(M∩S)/Total
+Now substitute the values:
+n(M)=20
+n(S)=15
+n(M∩S)=5
+Total students = 50
+P(M∪S)=20+15−5/50=30/50=3/5
+
+Final Answer:
+The probability = 3/5
+
+Question 3: A bag has 3 red and 2 blue balls. If one ball is drawn randomly and is red, what is the probability
+that the next ball is also red (without replacement)?
+
+ Sol:-Since the first ball drawn is red, we update the situation:
+Initially: 3 red, 2 blue (total 5)
+After drawing one red (and not replacing it):
+Remaining → 2 red, 2 blue (total 4)
+Now, the probability that the next ball is also red:
+P(second red∣first red)=2/4=1/2
+
+Final Answer:
+The probability is 1/2
+
+Question 4: The population of a school is divided into 60% boys and 40% girls. If you want equal representation
+of both genders in the sample, which method should you use: Simple Random Sampling or Stratified Sampling?
+Why?
+
+Sol:-You should use Stratified Sampling.
+Why?
+In the population, boys (60%) and girls (40%) are not equally represented. If you use Simple Random Sampling, you might end up with more boys than girls in your sample just by chance.
+With Stratified Sampling, you divide the population into two groups (strata): boys and girls, and then select an equal number from each group. This guarantees equal representation of both genders in your sample.
+Final Answer:
+Use Stratified Sampling, because it ensures balanced representation from both groups.
+
+Question 5: The average height of 1000 students = 160 cm. A sample of 100 students shows an average height
+= 158 cm.
+Find the sampling error.
+
+Sol:-Sampling error is the difference between the sample mean and the population mean.
+Sampling Error= xˉ−μ
+Here:
+Population mean μ=160 cm
+Sample mean xˉ=158 cm
+Sampling Error=158−160=−2 cm
+Final Answer:
+Sampling error = −2 cm (the sample underestimates the population mean by 2 cm).
+
+Question 6: The population mean salary is ₹50,000 with σ = ₹5,000. If we take a sample of 100 employees, what
+is the standard error of the mean (SEM)?
+
+Sol:-The Standard Error of the Mean (SEM) is calculated using:
+SEM=σ/root(n)
+Here:
+σ=5000
+n=100
+So,SEM=500/root(100)
+=5000/10=500
+Final Answer:
+The standard error of the mean = ₹500
+
+Question 7: In a group of 100 students:
+40 like Cricket (C)
+30 like Football (F)
+10 like both Cricket and Football
+Find the probability that a student likes at least one sport.
+
+Sol:-We want the probability that a student likes at least one sport (Cricket or Football), i.e., C∪F.
+Using the inclusion–exclusion principle:
+          P(C∪F)=n(C)+n(F)−n(C∩F)/Total
+Substitute the values:
+n(C)=40
+n(F)=30
+n(C∩F)=10
+Total students = 100
+P(C∪F) = 40+30−10/100 
+       = 60/100=3/5
+Final Answer:
+The probability = 3/5
+
+Question 8: From a deck of 52 cards, two cards are drawn without replacement. What is the probability that
+both are Aces?
+
+Sol:- A standard deck has 52 cards with 4 Aces.
+      We draw two cards without replacement.
+Step 1: Probability first card is an Ace = 4/52 =1/13
+Step 2: Probability second card is an Ace (after one Ace is already drawn)
+Now remaining: 3 Aces out of 51 cards = 3/52= 1/17
+Step 3: Multiply the probabilities
+P(both Aces)=4/52×3/51
+            =12/2652
+            =1/221
+
+Final Answer:
+The probability = 1/221
+
+Question 9: A factory produces bulbs with 2% defective rate. If 5 bulbs are chosen at random, what is the
+probability that all are non-defective?
+
+Sol:-The probability that a bulb is non-defective = 1−0.02=0.98.
+For 5 bulbs (assuming independence), the probability that all are non-defective =(0.98)5
+=0.9039(approximately)
+Final Answer:
+The probability ≈ 0.904 (or 90.4%)
+
+Question 10: Differentiate between discrete and continuous random variables with examples.
+
+Sol:-The difference comes down to the type of values the variable can take.
+
+Discrete Random Variable
+Takes countable, separate values (usually whole numbers).
+You can list all possible outcomes.
+Often comes from counting.
+Examples:
+Number of students in a class
+Number of heads when tossing 3 coins
+Number of cars passing a signal 
+Values look like: 0, 1, 2, 3, … (no fractions in between)
+
+Continuous Random Variable
+Takes any value within a range (including decimals).
+Cannot list all possible values because there are infinitely many.
+Comes from measurement.
+Examples:
+Height of students (e.g., 160.5 cm, 172.3 cm)
+Time taken to complete a task
+Temperature of a room
+Values can be: 1.2, 1.25, 1.253… (infinite possibilities)
+
+Key Difference
+Discrete: Countable values (finite or countably infinite)
+Continuous: Measurable values (uncountably infinite)
+
+In short:
+Counting → Discrete
+Measuring → Continuous
