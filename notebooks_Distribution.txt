@@ -1,0 +1,252 @@
+Assignment(Distribution)
+Q1.Simulate 30 rolls with =RANDBETWEEN(1,6). What is the probability of rolling a 3 exactly 5 times? 
+   (Hint: Use BINOM.DIST)
+
+SOL:-This is a classic binomial probability problem.
+You’re rolling a fair die 30 times, and:
+ Probability of getting a 3 on any roll = p=1/6
+ Number of trials = n=30
+ Desired successes = k=5
+The probability is given by the binomial formula:
+P(X=5) = (30/5) (1/6)^5(5/6)^25
+Excel Solution
+Using Excel, you can compute this directly with:
+=BINOM.DIST(5, 30, 1/6, FALSE)
+Final Answer (approx.)
+P(X=5)≈0.19
+So, there’s about a 19% chance of rolling exactly five 3s in 30 rolls.
+
+Q2.Generate 100 values in Excel using the continuous uniform distribution RAND() and plot a histogram.
+   Describe the shape of the distribution.
+
+SOL:-1. Generate 100 random values
+
+In Excel:
+In cell A1, type:
+=RAND()
+Drag this formula down to A100.
+This gives you 100 values from a continuous uniform distribution between 0 and 1.
+
+2. Create a histogram
+Option 1 (quick way):
+  1.Select cells A1:A100
+  2.Go to Insert → Charts → Histogram
+  3.Excel will automatically group values into bins
+Option 2 (more control):
+  1.Create bin values (e.g., 0, 0.1, 0.2, …, 1)
+  2.Use Data → Data Analysis → Histogram
+  3.Select your data and bin range
+
+3. Shape of the distribution
+The histogram should look:
+ 1.Roughly flat (rectangular)
+ 2.No peak or skew
+ 3.Bars of similar height across all intervals
+Why?
+Because RAND() generates values uniformly, meaning: 
+
+1.Every number between 0 and 1 is equally likely
+2.So frequencies are evenly spread across bins
+
+Final Description 
+The histogram is approximately uniform in shape, with bars of similar height across the range from 0 to 1. This indicates that all values are equally likely, which is consistent with a continuous uniform distribution.
+
+Q3.A dataset has a mean of 50 and a standard deviation of 5. What percentage of values lie between 45 and
+   55 if the data follows a normal distribution?
+
+SOL:-is is a standard normal distribution question.
+
+Mean μ=50
+Standard deviation σ=5
+Interval: 45 to 55
+
+Step 1: Convert to Z-scores
+Z=X−μ/σ
+
+FOR 45: Z= 45-50/5 =-1
+FOR 55: Z= 55-50/5 =1
+
+Step 2: Use the Empirical Rule
+In a normal distribution:
+About 68% of values lie within ±1 standard deviation of the mean
+
+Final Answer
+68%
+So, approximately 68% of the values lie between 45 and 55.
+	
+
+Q4.What is the concept of standardization (z-score), and why is it important in data analysis? Explain the
+formula and how standardization transforms a dataset.
+
+SOL:-Standardization (z-score) is a way to transform data so that it’s expressed in terms of how far each value is from the mean, measured in units of standard deviation.
+Z=X−μ/σ
+Where:
+X = original data value
+μ = mean of the dataset
+σ = standard deviation
+z = standardized value (z-score)
+
+What it means
+
+A z-score tells you how many standard deviations a value is from the mean:
+z=0: exactly at the mean
+z=+1: one standard deviation above the mean
+z=−2: two standard deviations below the mean
+
+How standardization transforms data
+
+When you standardize a dataset:
+ The new mean becomes 0
+ The new standard deviation becomes 1
+ The shape of the distribution stays the same (just rescaled)
+So you’re not changing the pattern—just putting everything on a common scale.
+
+Why it’s important
+1. Makes data comparable
+If two datasets have different units (e.g., test scores vs heights), z-scores allow direct comparison.
+2. Identifies outliers
+Extreme z-scores (like ±3 or more) often indicate unusual values.
+3. Essential for many statistical methods
+Used in:
+Normal distribution probabilities
+Hypothesis testing
+Machine learning algorithms (many models perform better with standardized data)
+4. Simplifies probability calculations
+Standardization lets you use standard normal tables or functions instead of recalculating each time.
+
+Q5.What is Kurtosis and their type?
+
+SOL:-Kurtosis is a statistical measure that describes the shape of a distribution, specifically how heavy or light the tails are compared to a normal distribution. It also reflects how sharply peaked the distribution is.
+Key Idea
+ It tells you about extreme values (outliers)
+ Higher kurtosis → more extreme values
+ Lower kurtosis → fewer extreme values
+
+Types of Kurtosis
+1. Mesokurtic (Normal kurtosis)
+ Example: Normal distribution
+ Kurtosis ≈ 3 (or excess kurtosis = 0)
+ Moderate tails and peak
+
+2. Leptokurtic
+ Kurtosis > 3 (excess kurtosis > 0)
+ Sharper peak and heavier tails
+ More prone to outliers
+
+3. Platykurtic
+ Kurtosis < 3 (excess kurtosis < 0)
+ Flatter peak and lighter tails
+ Fewer extreme values
+
+| Type        | Shape       | Tails    | Outliers |
+| ----------- | ----------- | -------- | -------- |
+| Mesokurtic  | Normal peak | Moderate | Normal   |
+| Leptokurtic | Sharp peak  | Heavy    | More     |
+| Platykurtic | Flat peak   | Light    | Fewer    |
+
+Why Kurtosis Matters
+ Helps understand risk and variability (especially in finance)
+ Identifies likelihood of extreme events
+ Useful in data modeling and distribution analysis
+
+Simple Intuition
+ Leptokurtic → “peaky with surprises”
+ Platykurtic → “flat and predictable”
+
+Q6.Explain why the uniform distribution is a good model for the outcome of rolling a fair die.
+
+SOL:-A uniform distribution is appropriate when all outcomes are equally likely, which is exactly the case for a fair die.
+
+1. Equal probability of outcomes
+
+A fair six-sided die has outcomes:
+1, 2, 3, 4, 5, 6
+Each outcome has probability:
+           P(X=x)= 1/6, x=1,2,3,4,5,6
+This matches a discrete uniform distribution, where every value in the set has the same probability.
+
+2. No bias or preference
+A die is considered fair if:
+ It is symmetric
+ Each face has an equal chance of landing face up
+So there’s no skewness or weighting toward any number, which is exactly the assumption behind a uniform distribution.
+
+3. Matches the definition of uniform distribution
+A discrete uniform distribution means:
+  All possible outcomes in a finite set occur with equal probability.
+A fair die satisfies this perfectly.
+
+4. Predictable long-term behavior
+If you roll the die many times:
+  Each number appears about 1/6 of the time
+  The frequencies even out over large samples (law of large numbers)
+
+5. Simple and useful model
+Using a uniform distribution allows us to:
+ Easily compute probabilities
+ Build simulations (like in Excel using RANDBETWEEN(1,6))
+ Model random processes accurately
+
+Final intuition
+A fair die is like a perfectly balanced system where no outcome is favored, so the most natural and accurate model is a uniform distribution.
+
+Q7.Use Excel to compute the probability of getting at least 8 successes in 15 trials with success probability 0.5
+
+SOL:-This is a binomial probability problem:
+ Number of trials: n=15
+ Probability of success: p=0.5
+ We want: P(X≥8)
+Why this works:
+ BINOM.DIST(7, 15, 0.5, TRUE) gives P(X≤7)
+  SO:-
+  P(X≥8)=1−P(X≤7)
+Final Answer (approx.)
+P(X≥8)≈0.50
+
+Since p=0.5, the distribution is symmetric around 7.5, so:
+Getting 8 or more successes is almost exactly half the probability.
+
+Q8.How does log transformation help in stabilizing variance and making data more normally distributed?
+
+SOL:-Log transformation is a technique where you replace each value X with log(X) (often natural log or base-10 log). It’s widely used when data is skewed or when variability increases with the size of the values.
+
+1. Stabilizing variance
+In many real datasets (e.g., income, population, sales), the spread of values increases as the mean increases. This is called heteroscedasticity.
+What log transformation does:
+ Compresses large values more than small ones
+ Reduces the gap between high and low values
+Result:
+ Variance becomes more constant across the dataset
+ Makes the data better suited for statistical methods that assume equal variance
+
+2. Making data more normally distributed
+Many datasets are right-skewed (long tail to the right).
+Log transformation:
+ Pulls in the long right tail
+ Reduces skewness
+ Makes the distribution more symmetric
+
+3. Intuition
+Think of it this way:
+ Original scale: differences are absolute
+ Log scale: differences become relative (percentage-based)
+Example:
+ Increase from 10 → 100 (huge jump)
+ After log: difference becomes much smaller
+So extreme values stop dominating the distribution.
+
+4. When it works best
+Log transformation is useful when:
+ Data is positively skewed
+ Variance increases with the mean
+ Relationships are multiplicative (e.g., growth rates)
+
+5. Important notes
+ Only works for positive values (you can’t take log of zero or negative numbers directly)
+ Sometimes a small constant is added: log(X+1)
+
+Final takeaway
+Log transformation helps by:
+ Reducing skewness → makes data closer to normal
+ Stabilizing variance → makes spread more consistent
+This improves the performance and validity of many statistical analyses.
