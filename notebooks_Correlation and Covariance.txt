@@ -1,0 +1,302 @@
+Correlation and Covariance(Assignment)
+Q1. Define Covariance and explain how it differs from Correlation in terms of scale and interpretation.
+SOL:-Covariance is a statistical measure that indicates the direction of the relationship between two variables. It tells us whether the variables tend to move together or in opposite directions.
+ If covariance is positive → both variables increase or decrease together
+ If covariance is negative → one increases while the other decreases
+ If covariance is zero → no linear relationship
+The formula for covariance is:
+       Cov(X,Y)=∑(Xi−Xˉ)(Yi−Yˉ)/n
+Difference Between Covariance and Correlation
+
+1. Scale
+Covariance:
+ Not standardized
+ Value depends on the units of the variables (e.g., kg·cm, ₹², etc.)
+ Can range from −∞ to +∞
+Correlation:
+ Standardized version of covariance
+ Unit-free (dimensionless)
+ Always lies between -1 and +1
+
+2. Interpretation
+Covariance:
+ Only indicates the direction of the relationship
+ Magnitude is hard to interpret because it depends on scale
+Correlation:
+  Indicates both direction and strength of the relationship
+  Easy to interpret:
+   +1 → perfect positive relationship
+    0 → no relationship
+   -1 → perfect negative relationship
+Key Idea
+Correlation is basically a normalized (scaled) version of covariance:
+Correlation=Cov(X,Y)/σx*σY
+
+Q2. What does a positive, negative, and zero covariance indicate about the relationship between two variables?
+SOL:-Covariance tells us how two variables move together. The sign of covariance gives the direction of their relationship:
+1. Positive Covariance
+Indicates that both variables move in the same direction
+When one variable increases, the other also tends to increase (and vice versa)
+Example: Height and weight — generally, taller people tend to weigh more
+
+2. Negative Covariance
+Indicates that variables move in opposite directions
+When one variable increases, the other tends to decrease
+Example: Price and demand — as price increases, demand usually decreases
+
+3. Zero Covariance
+Indicates no linear relationship between the variables
+Changes in one variable do not show any consistent pattern with the other
+Note: It does not always mean complete independence, just no linear association
+
+Q3. Discuss the limitations of covariance as a measure of relationship between two variables. Why is correlation
+preferred in many cases?
+SOL:-Covariance is useful for indicating whether two variables move together, but it has several important limitations that make it less practical as a standalone measure.
+
+Limitations of Covariance
+1. Depends on scale (units)
+Covariance is affected by the units of measurement (e.g., meters, rupees, kg).
+If you change units (like cm → meters), the covariance value changes.
+This makes comparisons across datasets difficult.
+
+2. No fixed range
+Covariance can take any value from −∞ to +∞.
+Because there is no standard range, it’s hard to judge whether a value is “strong” or “weak.”
+
+3. Hard to interpret magnitude
+While the sign (positive/negative) is meaningful, the size of covariance doesn’t clearly indicate the strength of the relationship.
+A value like 500 may be large or small depending on the data scale.
+
+4. Not standardized
+Covariance does not provide a relative measure of association.
+You cannot directly compare covariance values across different variable pairs.
+
+Why Correlation is Preferred
+Correlation overcomes these issues by standardizing covariance:
+
+1. Unit-free (dimensionless)
+ Correlation removes the effect of units, making it easier to compare relationships.
+
+2. Fixed range (-1 to +1)
+ Values are always between -1 and +1, making interpretation straightforward.
+
+3. Measures strength and direction
+Clearly shows both:
+ Direction (positive/negative)
+ Strength (weak/moderate/strong)
+
+4. Comparable across datasets
+Because it is standardized, correlation allows meaningful comparison between different variables and studies.
+
+Q4. Explain the difference between Pearson’s correlation coefficient and Spearman’s rank correlation
+coefficient. When would you prefer to use Spearman’s correlation?
+SOL:-Pearson’s correlation coefficient and Spearman’s rank correlation coefficient are both used to measure the relationship between two variables, but they differ in how they work and when they should be used.
+
+Pearson’s Correlation Coefficient (r)
+Measures the linear relationship between two continuous variables
+Uses the actual numerical values
+Assumes:
+Data is normally distributed (approximately)
+Relationship is linear
+Sensitive to outliers (extreme values can distort results)
+Interpretation:
++1 → perfect positive linear relationship
+0 → no linear relationship
+-1 → perfect negative linear relationship
+
+Spearman’s Rank Correlation Coefficient (ρ or rs)
+Measures the monotonic relationship (whether variables move in the same/opposite direction, not necessarily linearly)
+Uses ranks instead of actual values
+Does not require normal distribution
+Less sensitive to outliers
+Interpretation:
+ +1 → perfect increasing (monotonic) relationship
+ 0 → no monotonic relationship
+ -1 → perfect decreasing relationship
+
+| Feature                 | Pearson            | Spearman                           |
+| ----------------------- | ------------------ | ---------------------------------- |
+| Type of relationship    | Linear             | Monotonic (not necessarily linear) |
+| Data used               | Actual values      | Ranks                              |
+| Sensitivity to outliers | High               | Low                                |
+| Assumption of normality | Required (approx.) | Not required                       |
+
+When to Prefer Spearman’s Correlation
+Use Spearman’s correlation when:
+The relationship is not linear but still ordered (e.g., steadily increasing curve)
+Data contains outliers
+Data is ordinal (ranked data, like class positions)
+The dataset is not normally distributed
+The relationship is monotonic but nonlinear
+Example
+ If marks and ranks are compared → use Spearman
+ If height and weight are compared (linear trend) → use Pearson
+
+Q5. If the correlation coefficient between two variables X and Y is 0.85, interpret this value in context. Can you
+infer causation from this value? Why or why not?
+SOL:-A correlation coefficient of 0.85 indicates a strong positive relationship between variables X and Y.
+Interpretation
+The value 0.85 is close to +1, so:
+As X increases, Y also tends to increase
+The relationship is strong and fairly consistent
+In practical terms, the data points would lie close to an upward-sloping straight line, though not perfectly on it
+
+Can we infer causation?
+No, correlation does not imply causation.
+Why not?
+
+1. Direction is unclear
+Correlation does not tell us whether:
+X causes Y
+Y causes X
+or both influence each other
+
+2. Third variable problem
+A hidden variable (confounder) may be influencing both X and Y
+Example: Ice cream sales and drowning incidents are correlated, but both are influenced by temperature
+
+3. Coincidental relationship
+Sometimes variables show high correlation purely by chance, without any real connection
+
+Q6. Using the dataset below, calculate the covariance between X and Y
+X  2  4  6  8
+Y  3  7  5 10
+SOL:-Step 1: Given Data
+X: 2, 4, 6, 8
+Y: 3, 7, 5, 10
+Number of observations: n=4
+Step 2: Find Means
+Xˉ=20/4=5
+Yˉ=25/4=6.25
+Step 3: Compute
+
+| X | Y  | (X - \bar{X}) | (Y - \bar{Y}) | Product |
+| - | -- | ------------- | ------------- | ------- |
+| 2 | 3  | -3            | -3.25         | 9.75    |
+| 4 | 7  | -1            | 0.75          | -0.75   |
+| 6 | 5  | 1             | -1.25         | -1.25   |
+| 8 | 10 | 3             | 3.75          | 11.25   |
+
+Step 4: Sum of Products
+∑(Xi−Xˉ)(Yi−Yˉ)=9.75−0.75−1.25+11.25=19
+
+Step 5: Covariance Formula
+For population:
+Cov(X,Y)=19/4=4.75
+For sample (if required):
+Cov(X,Y)=19/3≈6.33
+Final Answer
+Population covariance = 4.75
+Sample covariance ≈ 6.33
+
+Q7. Compute the Pearson correlation coefficient between variables A and B:
+A 10 20 30 40 50
+B  8 14 18 24 28
+SOL:-Step 1: Given Data
+A: 10, 20, 30, 40, 50
+B: 8, 14, 18, 24, 28
+n=5
+Step 2: Find Means
+Aˉ=30
+Bˉ=18.4
+Step 3: Create Table
+| A  | B  | (A-\bar{A}) | (B-\bar{B}) | Product | ( (A-\bar{A})^2 ) | ( (B-\bar{B})^2 ) |
+| -- | -- | ----------- | ----------- | ------- | ----------------- | ----------------- |
+| 10 | 8  | -20         | -10.4       | 208     | 400               | 108.16            |
+| 20 | 14 | -10         | -4.4        | 44      | 100               | 19.36             |
+| 30 | 18 | 0           | -0.4        | 0       | 0                 | 0.16              |
+| 40 | 24 | 10          | 5.6         | 56      | 100               | 31.36             |
+| 50 | 28 | 20          | 9.6         | 192     | 400               | 92.16             |
+Step 4: Sum Values
+∑(A−Aˉ)(B−Bˉ)=208+44+0+56+192=500
+∑(A−Aˉ)2=1000
+∑(B−Bˉ)2=251.2
+Step 5: Apply Formula
+r=∑(A−Aˉ)(B−Bˉ)/root∑(A−Aˉ)^2⋅∑(B−Bˉ)^2
+r=500/501.2≈0.998
+Final Answer
+Pearson correlation coefficient ≈ 0.998
+
+Q8. The following table shows heights (in cm) and weights (in kg) of 5 students. 
+Find the correlation coefficient between Height and Weight.
+Height 150 160 165 170 180
+Weight  50  55  58  62  70
+
+SOL:-Step 1: Given Data
+Height (X): 150, 160, 165, 170, 180
+Weight (Y): 50, 55, 58, 62, 70
+n=5
+Step 2: Find Means
+Xˉ=825/5=165
+Yˉ=295/5=59
+Step 3: Create Table
+| X   | Y  | (X-\bar{X}) | (Y-\bar{Y}) | Product | ( (X-\bar{X})^2 ) | ( (Y-\bar{Y})^2 ) |
+| --- | -- | ----------- | ----------- | ------- | ----------------- | ----------------- |
+| 150 | 50 | -15         | -9          | 135     | 225               | 81                |
+| 160 | 55 | -5          | -4          | 20      | 25                | 16                |
+| 165 | 58 | 0           | -1          | 0       | 0                 | 1                 |
+| 170 | 62 | 5           | 3           | 15      | 25                | 9                 |
+| 180 | 70 | 15          | 11          | 165     | 225               | 121               |
+Step 4: Sum Values
+∑(X−Xˉ)(Y−Yˉ)=135+20+0+15+165=335
+∑(X−Xˉ)^2=500
+∑(Y−Yˉ)^2=228
+Step 5: Apply Formula
+r=∑(A−Aˉ)(B−Bˉ)/root∑(A−Aˉ)^2⋅∑(B−Bˉ)^2
+r=335/337.64≈0.99
+Final Answer
+Correlation coefficient (r) ≈ 0.99
+
+Q9. Given the dataset below, determine whether there is a positive or negative correlation between X and Y. 
+(No need for exact calculation, just reasoning.)
+X 1 2 3 4 5 6
+Y 15 12 9 7 3
+SOL:-Look at how the values of X and Y change together:
+
+As X increases (1 → 6)
+Y decreases (15 → 3)
+This shows that the two variables move in opposite directions.
+
+There is a negative correlation between X and Y.
+Reasoning
+Higher values of X are associated with lower values of Y
+This indicates an inverse relationship between the variables
+If plotted on a graph, the points would show a downward-sloping trend.
+
+Q10. Two investment portfolios have the following returns (%) over 5 years. Compute the covariance and
+correlation coefficient, and interpret whether the portfolios move together.
+Year Portfolio A Portfolio B
+1     8            6
+2    10            9
+3    12            11
+4     9            8   
+5    11            10
+SOL:-Step 1: Data
+Portfolio A (X): 8, 10, 12, 9, 11
+Portfolio B (Y): 6, 9, 11, 8, 10
+n=5
+Step 2: Means
+Xˉ=50/5=10
+Yˉ=44/5=8.8
+Step 3: Table
+| X  | Y  | (X-\bar{X}) | (Y-\bar{Y}) | Product | ( (X-\bar{X})^2 ) | ( (Y-\bar{Y})^2 ) |
+| -- | -- | ----------- | ----------- | ------- | ----------------- | ----------------- |
+| 8  | 6  | -2          | -2.8        | 5.6     | 4                 | 7.84              |
+| 10 | 9  | 0           | 0.2         | 0       | 0                 | 0.04              |
+| 12 | 11 | 2           | 2.2         | 4.4     | 4                 | 4.84              |
+| 9  | 8  | -1          | -0.8        | 0.8     | 1                 | 0.64              |
+| 11 | 10 | 1           | 1.2         | 1.2     | 1                 | 1.44              |
+Step 4: Sums
+∑(X−Xˉ)(Y−Yˉ)=5.6+0+4.4+0.8+1.2=12
+∑(X−Xˉ)^2=10
+∑(Y−Yˉ)^2=14.8
+Step 5: Covariance
+Population covariance:
+Cov(X,Y)=12/5=2.4
+Sample covariance:
+Cov(X,Y)=12/4=3
+Step 6: Correlation Coefficient
+r=12/12.17≈0.99
+Final Answers
+Covariance ≈ 2.4 (population) or 3 (sample)
+Correlation coefficient ≈ 0.99
