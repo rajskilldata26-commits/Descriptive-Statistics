@@ -1,0 +1,235 @@
+Q1. Use Copilot to identify and summarize missing values in the dataset.
+SOL:-How to Identify Missing Values using Copilot (Excel)
+1.Open your dataset in Microsoft Excel
+2.Click on the Copilot button (top-right in Excel 365)
+3.Type a prompt like:
+  “Find missing values in this dataset”
+  “Summarize null or blank values column-wise”
+4.Copilot will:
+ Scan for blank cells / null values
+ Highlight affected columns
+ Give a summary like:
+  Column A → 2 missing values
+  Column B → 0 missing values
+  Column C → 5 missing values
+
+Example Summary (What You Should Write)
+Here’s how your answer should look in your assignment:
+Summary of Missing Values:
+Using Copilot, the dataset was analyzed for missing values. It was found that:
+  Some columns contain missing (blank/null) entries.
+  The highest number of missing values is in the [Column Name] column.
+  Certain columns have no missing values, indicating complete data.
+  Overall, the dataset contains [X] missing values, which may affect analysis if not handled properly.
+
+Q2. Use Copilot to fill missing values in the Region and Category columns.
+SOL:-How to Fill Missing Values using Copilot (Excel)
+1.Open your dataset in Microsoft Excel
+2.Click on Copilot
+3.Enter a prompt like:
+  “Fill missing values in Region and Category columns using the most frequent value”
+   OR
+  “Replace blanks in Region and Category with appropriate values based on existing data”
+
+What Copilot Typically Does
+
+For categorical columns like Region and Category, Copilot usually:
+  Uses mode (most frequent value)
+Example:
+ Region column → Missing values filled with “North” (if most common)
+ Category column → Filled with “Electronics” (if most common)
+ Or infers from nearby rows/patterns if possible
+
+Example (Before & After)
+| Region | Category |
+| ------ | -------- |
+| North  | A        |
+|        | B        |
+| South  |          |
+| North  | A        |
+After (Filled):
+| Region | Category |
+| ------ | -------- |
+| North  | A        |
+| North  | B        |
+| South  | A        |
+| North  | A        |
+
+Q3. Fill missing numeric values in the Units Sold and Unit Price columns.
+SOL:-How to Fill Missing Numeric Values (Units Sold & Unit Price)
+1.Open your data in Microsoft Excel
+2.Click Copilot
+3.Enter a prompt like:
+  “Fill missing values in Units Sold and Unit Price using the average”
+  OR
+  “Replace blank numeric values with mean of each column”
+| Units Sold | Unit Price |
+| ---------- | ---------- |
+| 10         | 50         |
+|            | 60         |
+| 15         |            |
+| 20         | 55         |
+Step:
+Mean Units Sold = (10 + 15 + 20) / 3 = 15
+Mean Unit Price = (50 + 60 + 55) / 3 = 55
+After:
+| Units Sold | Unit Price |
+| ---------- | ---------- |
+| 10         | 50         |
+| 15         | 60         |
+| 15         | 55         |
+| 20         | 55         |
+
+Q4. Create a new calculated column Total  Revenue
+SOL:-Formula for Total Revenue
+Total Revenue is calculated as:
+Total Revenue=Units Sold×Unit Price
+Using Microsoft Copilot in Excel
+1.Open your dataset in Microsoft Excel
+2.Click Copilot
+ Type:
+ “Create a new column Total Revenue as Units Sold multiplied by Unit Price”
+Copilot will automatically:
+ Add a new column named Total Revenue
+ Apply the formula to all rows
+Manual Excel Formula (if needed)
+
+If you’re doing it yourself:
+Suppose:
+Units Sold → Column D
+Unit Price → Column E
+In the new column (say Column F), enter:
+= D2 * E2
+Then drag it down for all rows.
+Example
+| Units Sold | Unit Price | Total Revenue |
+| ---------- | ---------- | ------------- |
+| 10         | 50         | 500           |
+| 15         | 60         | 900           |
+| 20         | 55         | 1100          |
+
+Q5. Use Copilot to find the total price of Order ID = ‘ORD0123’.
+SOL:-Using Copilot to Find Total Price
+1.Open your dataset in Microsoft Excel
+2.Click Copilot
+3.Type a prompt like:
+  “Find the total revenue for Order ID ORD0123”
+   OR
+  “Filter Order ID ORD0123 and sum the Total Revenue column”
+What Copilot Does
+  Filters the dataset where Order ID = ORD0123
+  Looks at the Total Revenue column (you created in Q4)
+  Returns the total price (sum) for that order
+Example
+| Order ID | Total Revenue |
+| -------- | ------------- |
+| ORD0123  | 500           |
+| ORD0456  | 700           |
+| ORD0123  | 300           |
+Total for ORD0123 = 500 + 300 = 800
+
+Q6. Use Copilot to generate a summary chart of average profit by region.
+SOL:-Using Microsoft Copilot to Create the Chart
+1.Open your dataset in Microsoft Excel
+2.Click Copilot
+3.Type a prompt like:
+  “Create a chart showing average profit by region”
+OR
+ “Generate a summary chart of average profit grouped by Region”
+
+What Copilot Will Do
+ Group data by Region
+ Calculate average profit for each region
+ Create a chart (usually a column/bar chart) like:
+| Region | Avg Profit |
+| ------ | ---------- |
+| North  | 250        |
+| South  | 180        |
+| East   | 300        |
+| West   | 220        |
+Then it automatically generates a visual chart comparing these values.
+Alternative (Manual Method)
+You can also:
+1.Insert a PivotTable
+2.Drag:
+ Region → Rows
+ Profit → Values (set to Average)
+3.Insert a Column Chart
+
+Q7. Create a pivot table summarizing total sales by category and region.
+SOL:-✅ Using Microsoft Copilot
+1.Open your dataset in Microsoft Excel
+2.Click Copilot
+3.Type:
+  “Create a pivot table showing total sales by category and region”
+
+What Copilot Will Do
+
+It will automatically:
+1.Insert a PivotTable
+2.Arrange fields like this:
+ Rows → Category
+ Columns → Region
+ Values → Total Sales (Sum)
+Example Output
+| Category    | North | South | East | West | Total |
+| ----------- | ----- | ----- | ---- | ---- | ----- |
+| Electronics | 5000  | 3000  | 4000 | 3500 | 15500 |
+| Clothing    | 2000  | 2500  | 2200 | 2100 | 8800  |
+| Furniture   | 3000  | 2800  | 2600 | 2900 | 11300 |
+| **Total**   | 10000 | 8300  | 8800 | 8500 | 35600 |
+Manual Method (PivotTable)
+1.Select your dataset
+2.Go to Insert → PivotTable
+3.Drag fields:
+ Category → Rows
+ Region → Columns
+ Total Revenue / Sales → Values (Sum)
+
+Q8. Build a dashboard combining key KPIs and charts.
+SOL:-✅ Using Microsoft Copilot to Build a Dashboard
+1.Open your dataset in Microsoft Excel
+2.Click Copilot
+3.Type:
+ “Create a dashboard with key KPIs and charts from this dataset”
+OR
+ “Build a sales dashboard including total revenue, average profit, and charts by region and category”
+What Your Dashboard Should Include
+
+A good dashboard combines KPIs + Visuals:
+
+ Key KPIs (Top Section)
+1.Total Revenue
+2.Total Units Sold
+3.Average Profit
+4.Number of Orders
+
+ Copilot usually displays these as cards
+Charts (Main Section)
+Include 3–4 important visuals:
+1.Bar Chart → Sales by Region
+2.Column Chart → Sales by Category
+3.Line Chart → Revenue over Time (if date exists)
+4.Pie Chart → Category share in total sales
+
+Filters / Slicers (Optional but powerful)
+ Region
+ Category
+ Date
+These make the dashboard interactive.
+
+Q9. Use Copilot to generate a summary report.
+SOL:-Using Microsoft Copilot
+1.Open your dataset (and dashboard) in Microsoft Excel
+2.Click Copilot
+3.Type:
+  “Generate a summary report of this dataset and analysis”
+OR
+  “Create a report highlighting key insights, trends, and performance by region and category”
+What Copilot Will Generate
+Copilot typically creates a report including:
+ Overview of the dataset
+ Key metrics (KPIs)
+ Trends and patterns
+ Regional and category performance
+ Insights and conclusions
